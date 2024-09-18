@@ -19,7 +19,7 @@ const RewardPopup: React.FC<RewardPopupProps> = ({ onClose, onConfirm, reward, u
   };
 
   const confirmReward = () => {
-    if (userPoints >= reward.Points!) { // เปลี่ยนเป็น Points ตาม RewardInterface
+    if (userPoints >= reward.reward .points!) { // เปลี่ยนเป็น Points ตาม RewardInterface
       setIsOpen(false);
       setIsSuccess(true);
 
@@ -42,7 +42,7 @@ const RewardPopup: React.FC<RewardPopupProps> = ({ onClose, onConfirm, reward, u
             <div className="reward-icon">
               <img src="logo.PNG" alt="Reward Icon" />
             </div>
-            <div className="reward-points">{reward.Points} POINTS</div> {/* เปลี่ยนเป็น Points */}
+            <div className="reward-points">{reward.reward .points} POINTS</div> {/* เปลี่ยนเป็น Points */}
             <div className="reward-image">
               <img src={reward.imageUrl} alt="Reward" />
             </div>

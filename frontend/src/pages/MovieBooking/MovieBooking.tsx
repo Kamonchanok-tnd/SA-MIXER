@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { Button, Card } from 'antd';
-import { ClockCircleOutlined, UserOutlined, StarOutlined, EnvironmentOutlined, FileTextOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined, UserOutlined, StarOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import './MovieBooking.css';
 import { GetShowtimes, GetMovieById, GetShowtimeById } from '../../services/https/index'; // Import API calls
 import { MoviesInterface } from '../../interfaces/IMovie'; // Import movie interface
-import { ShowTimesInterface } from '../../interfaces/IShowtime'; // Import showtimes interface
+import Navbar from '../../components/navbar/navbar';
 
 const PrevArrow = (props: any) => {
   const { onClick } = props;
@@ -139,6 +139,8 @@ const MovieBooking: React.FC = () => {
 
   
   return (
+    <div><Navbar />
+    <div className='moviebooking'>
     <div className="container mx-auto px-4 py-8">
       {/* Navigation */}
       <nav className="flex justify-between items-center mb-8">
@@ -234,6 +236,8 @@ const MovieBooking: React.FC = () => {
           </Card>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

@@ -297,10 +297,10 @@ useEffect(() => {
 
         {/* Success Popup */}
         {showSuccessPopup && (
-          <div style={styles.popupOverlay}>
-            <div style={styles.popup}>
-              <p style={styles.popupMessage}>Payment Successful!</p>
-              <button style={styles.popupButton} onClick={handleOkClick}>
+          <div style={styles.reward .popupOverlay}>
+            <div style={styles.reward .popup}>
+              <p style={styles.reward .popupMessage}>Payment Successful!</p>
+              <button style={styles.reward .popupButton} onClick={handleOkClick}>
                 OK
               </button>
             </div>

@@ -81,11 +81,11 @@ func SetupDatabase() {
 		Password:   hashedPassword,
 		GenderID:   GenderMale.ID,
 		TotalPoint: 10,
-<<<<<<< HEAD
-		Role:       "admin",
-=======
-		Role:       "user",
->>>>>>> origin/test
+// <<<<<<< HEAD
+// 		Role:       "admin",
+// =======
+// 		Role:       "user",
+// >>>>>>> origin/test
 	}
 	db.FirstOrCreate(Member1, &entity.Member{
 		Email: "sa@gmail.com",

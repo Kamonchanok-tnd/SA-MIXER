@@ -95,7 +95,7 @@ const HistoryPage: React.FC = () => {
                 const formattedRewards = rewardData.map((reward: RewardInterface) => ({
                     ...reward,
                     Reward_time: new Date(reward.Reward_time), // Convert Reward_time to Date object
-                    Points: Number(reward.Points), // Ensure Points is a number
+                    Points: Number(reward.reward .points), // Ensure Points is a number
                 }));
 
                 setRewards(formattedRewards);
@@ -210,7 +210,7 @@ const HistoryPage: React.FC = () => {
                 <div>
                     <h2>{selectedReward.RewardName}</h2>
                     <p>{selectedReward.Describtion}</p>
-                    <p>Points: {selectedReward.Points}</p>
+                    <p>Points: {selectedReward.reward .points}</p>
 
                     {/* แสดงโค้ดแลกเปลี่ยน */}
                     <p>
