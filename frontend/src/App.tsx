@@ -17,20 +17,28 @@ import Reward from './pages/Reward/Reward';
 import HistoryPage from './pages/History/History';
 import MovieTable from './pages/Movie/MovieTable/movietable';
 import MovieEdit from './pages/Movie/MovieEdit/movieedit';  // ใช้ MovieEdit เวอร์ชันที่แก้ไขแล้ว
+// import Header from './components/HeaderTicketcheck/Headerticketcheck';
+// import Sidebar from './components/Sidebarticketcheck/Sidebarticketcheck';
+import Table from './pages/ticketstatus/ticketstatus';
+import QrScanner from './pages/Qrscanner/QrScanner';
 
 const App: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const isLoggedIn = localStorage.getItem('isLogin') === 'true';
     const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    const isStaff = localStorage.getItem('isStaff') === 'true';
 
     useEffect(() => {
         if (isLoggedIn) {
             if (isAdmin && !['/movie', '/showtimes', '/members', '/analytics', '/movies/create', '/movies/edit'].includes(location.pathname)) {
                 navigate('/movie');
             }
-            if (!isAdmin && !['/home', '/myticket', '/seatbooking', '/moviebooking', '/reward', '/history'].includes(location.pathname)) { 
+            else if (!isStaff && !isAdmin && !['/home', '/myticket', '/seatbooking', '/moviebooking', '/reward', '/history'].includes(location.pathname)) { 
                 navigate('/home');
+            }
+            else if (isStaff && !['/scanner','/ticketstatus'].includes(location.pathname)){
+                navigate('/scanner');
             }
         } else {
             navigate('/login');
@@ -66,6 +74,10 @@ const App: React.FC = () => {
                     {/* เส้นทางสำหรับการเเลกรางวัล */}
                     <Route path="/reward" element={isLoggedIn && !isAdmin ? <Reward /> : <Navigate to="/login" />} />
                     <Route path="/history" element={isLoggedIn && !isAdmin ? <HistoryPage /> : <Navigate to="/login" />} />
+
+                    {/*เส้นทางสำหรับสตาฟ*/ }
+                    <Route path="/scanner" element={isLoggedIn && isStaff ? <QrScanner /> : <Navigate to="/login"/>} />
+                    <Route path="/ticketstatus" element={isLoggedIn && isStaff ? <Table /> : <Navigate to="/login"/>} />
 
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
