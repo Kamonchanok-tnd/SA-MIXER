@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import Members from './pages/Member/Member';
-import Analytics from './pages/Analytics/Analytics';
 import Login from './pages/Login/login';
 import Movie from './pages/Movie/Movie';
 import MyTicket from './pages/MyTicket/myticket';
@@ -26,7 +25,7 @@ const App: React.FC = () => {
 
     useEffect(() => {
         if (isLoggedIn) {
-            if (isAdmin && !['/movie', '/showtimes', '/members', '/analytics', '/movies/create', '/movies/edit'].includes(location.pathname)) {
+            if (isAdmin && !['/movie', '/showtimes', '/members','/movies/create', '/movies/edit'].includes(location.pathname)) {
                 navigate('/movie');
             }
             if (!isAdmin && !['/home', '/myticket', '/seatbooking', '/moviebooking', '/reward', '/history'].includes(location.pathname)) { 
@@ -48,7 +47,7 @@ const App: React.FC = () => {
                     <Route path="/movie" element={isLoggedIn && isAdmin ? <MovieTable /> : <Navigate to="/login" />} />
                     <Route path="/showtimes" element={isLoggedIn && isAdmin ? <ShowtimeManagement /> : <Navigate to="/login" />} />
                     <Route path="/members" element={isLoggedIn && isAdmin ? <Members /> : <Navigate to="/login" />} />
-                    <Route path="/analytics" element={isLoggedIn && isAdmin ? <Analytics /> : <Navigate to="/login" />} />
+                   
                     <Route path="/movies/create" element={isLoggedIn && isAdmin ? <Movie /> : <Navigate to="/login" />} />
                     <Route path="/movies/edit" element={isLoggedIn && isAdmin ? <MovieEdit /> : <Navigate to="/login" />} /> 
 

@@ -265,7 +265,7 @@ function Member() {
   }, []);
 
   return (
-    <div className="member">
+    <div className="showtime">
       <Card style={{ margin: "20px" }}>
         {contextHolder}
 

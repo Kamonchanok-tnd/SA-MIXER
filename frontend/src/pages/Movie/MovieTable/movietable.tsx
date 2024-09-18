@@ -4,6 +4,7 @@ import { GetMovies, DeleteMovieByID } from '../../../services/https';  // เพ
 import { MoviesInterface } from '../../../interfaces/IMovie';
 import { Table, Button, message, Popconfirm } from 'antd';  // เพิ่ม Popconfirm สำหรับการยืนยันการลบ
 
+
 const MovieTable: React.FC = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState<MoviesInterface[]>([]);
@@ -87,7 +88,7 @@ const MovieTable: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className='showtime'>
       <h1>เพิ่มข้อมูลหนัง</h1>
 
       {/* Create button navigates to the Create Movie page */}

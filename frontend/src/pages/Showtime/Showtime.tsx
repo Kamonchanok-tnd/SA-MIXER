@@ -408,166 +408,170 @@ const ShowtimeManagement: React.FC = () => {
   };
 
   return (
-    
-    <div>
-      <Card style={{ margin: "20px" }}>
-      {/* Header Section */}
-      <div className="header">
-        <div className="header-item">
-          <label>Date:</label>
-          <DatePicker 
-            value={selectedDate} 
-            onChange={handleDateChange} 
-            allowClear={false} 
-          />
-        </div>
-        <div className="header-item">
-          <label>Time:</label>
-          <TimePicker
-            value={selectedTime} 
-            format="HH:mm"
-            disabledHours={disabledHours}
-            disabledMinutes={disabledMinutes}
-            onChange={handleTimeChange}
-            allowClear={false} 
-          />
-        </div>
-        <div className="header-item search-movie-container">
-          <label>Movie:</label>
-          <Select
-            value={selectedMovieID} 
-            showSearch
-            className="movie-select"
-            allowClear
-            placeholder="Select a Movie"
-            style={{ width: 200 }}
-            optionFilterProp="children"
-            onChange={(value) => setSelectedMovieID(value as number)}
-            filterOption={(input, option) =>
-              option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            {movies.map((movie) => (
-              <Option key={movie.ID} value={movie.ID}>
-                {movie.MovieName}
-              </Option>
-            ))}
-          </Select>
-        </div>
-        <div className="header-item search-theater-container">
-          <label>Theater:</label>
-          <Select
-            value={selectedTheaterID}
-            showSearch
-            className="theater-select"
-            allowClear
-            placeholder="Select a Theater"
-            style={{ width: 200 }}
-            optionFilterProp="children"
-            onChange={(value) => setSelectedTheaterID(value as number)}
-            filterOption={(input, option) =>
-              option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            {theaters.map((theater) => (
-              <Option key={theater.ID} value={theater.ID}>
-                {theater.TheaterName}
-              </Option>
-            ))}
-          </Select>
-        </div>
-        <div className="header-item">
-          <button className="add-btn" onClick={handleAddShowTime}>
-            <PlusOutlined /> Add
-          </button>
-        </div>
-      </div>
-
-      {/* Showtime Table Section */}
-      <Table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>Theater / Time</th>
-            {showtimes.map((time) => (
-              <th key={time}>{time}:00</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {theaters.map((theater) => (
-            <tr key={theater.ID}>
-              <td>{theater.TheaterName}</td>
-              {showtimes.map((time) => {
-                const showtime = schedule.find(
-                  (s) => s.startTime === time && s.theater === theater.TheaterName
-                );
-                if (showtime && time === showtime.startTime) {
-                  const colSpan = showtime.endTime - showtime.startTime;
-                  return (
-                    <td 
-                      key={time} 
-                      colSpan={colSpan}
-                      className="showtime-cell"
-                      style={{ 
-                        backgroundColor: colorMap[showtime.movieTitle!],
-                        textAlign: 'center',
-                        cursor: 'pointer'
-                      }}
-                      onClick={() => handleClick(showtime)}
-                    >
-                      {getmovieTypeIcon(showtime.movieType)} {/* เรียกฟังก์ชันเพื่อตรวจสอบ movieType */}
-                      {showtime.movieTitle}
-                    </td>
-                  );
-                } else if (showtime && time < showtime.endTime && time > showtime.startTime) {
-                  return null;
-                } else if (!schedule.some(s => s.startTime <= time && s.endTime > time && s.theater === theater.TheaterName)) {
-                  return <td key={time}></td>;
+    <div className="showtime">
+      <div className="main-content">
+        <Card style={{ margin: "20px" }}>
+          {/* Header Section */}
+          <div className="header">
+            <div className="header-item">
+              <label>Date:</label>
+              <DatePicker
+                value={selectedDate}
+                onChange={handleDateChange}
+                allowClear={false}
+              />
+            </div>
+            <div className="header-item">
+              <label>Time:</label>
+              <TimePicker
+                value={selectedTime}
+                format="HH:mm"
+                disabledHours={disabledHours}
+                disabledMinutes={disabledMinutes}
+                onChange={handleTimeChange}
+                allowClear={false}
+              />
+            </div>
+            <div className="header-item search-movie-container">
+              <label>Movie:</label>
+              <Select
+                value={selectedMovieID}
+                showSearch
+                className="movie-select"
+                allowClear
+                placeholder="Select a Movie"
+                style={{ width: 200 }}
+                optionFilterProp="children"
+                onChange={(value) => setSelectedMovieID(value as number)}
+                filterOption={(input, option) =>
+                  option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                 }
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-
-
-      {/* Popup สำหรับการอัปเดตและลบ */}
-      <Modal
+              >
+                {movies.map((movie) => (
+                  <Option key={movie.ID} value={movie.ID}>
+                    {movie.MovieName}
+                  </Option>
+                ))}
+              </Select>
+            </div>
+            <div className="header-item search-theater-container">
+              <label>Theater:</label>
+              <Select
+                value={selectedTheaterID}
+                showSearch
+                className="theater-select"
+                allowClear
+                placeholder="Select a Theater"
+                style={{ width: 200 }}
+                optionFilterProp="children"
+                onChange={(value) => setSelectedTheaterID(value as number)}
+                filterOption={(input, option) =>
+                  option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+              >
+                {theaters.map((theater) => (
+                  <Option key={theater.ID} value={theater.ID}>
+                    {theater.TheaterName}
+                  </Option>
+                ))}
+              </Select>
+            </div>
+            <div className="header-item">
+              <button className="add-btn" onClick={handleAddShowTime}>
+                <PlusOutlined /> Add
+              </button>
+            </div>
+          </div>
+  
+          {/* Showtime Table Section */}
+          <Table className="table table-bordered">
+            <thead>
+              <tr>
+                <th>Theater / Time</th>
+                {showtimes.map((time) => (
+                  <th key={time}>{time}:00</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {theaters.map((theater) => (
+                <tr key={theater.ID}>
+                  <td>{theater.TheaterName}</td>
+                  {showtimes.map((time) => {
+                    const showtime = schedule.find(
+                      (s) =>
+                        s.startTime === time &&
+                        s.theater === theater.TheaterName
+                    );
+                    if (showtime && time === showtime.startTime) {
+                      const colSpan = showtime.endTime - showtime.startTime;
+                      return (
+                        <td
+                          key={time}
+                          colSpan={colSpan}
+                          className="showtime-cell"
+                          style={{
+                            backgroundColor: colorMap[showtime.movieTitle!],
+                            textAlign: "center",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => handleClick(showtime)}
+                        >
+                          {getmovieTypeIcon(showtime.movieType)} {/* เรียกฟังก์ชันเพื่อตรวจสอบ movieType */}
+                          {showtime.movieTitle}
+                        </td>
+                      );
+                    } else if (
+                      showtime &&
+                      time < showtime.endTime &&
+                      time > showtime.startTime
+                    ) {
+                      return null;
+                    } else if (
+                      !schedule.some(
+                        (s) =>
+                          s.startTime <= time &&
+                          s.endTime > time &&
+                          s.theater === theater.TheaterName
+                      )
+                    ) {
+                      return <td key={time}></td>;
+                    }
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+  
+          {/* Popup สำหรับการอัปเดตและลบ */}
+          <Modal
   title="Update Showtime"
   visible={popupVisible}
-  onCancel={() => setPopupVisible(false)} 
-  footer={null} 
-  className="modal-content" // เพิ่ม className ที่นี่
+  onCancel={() => setPopupVisible(false)}
+  footer={null}
+  className="modal-content"
 >
-<Card style={{ padding: '0', margin: '20', display: 'flex', justifyContent: 'center' , marginBottom: '20px'}}>
-  {moviePoster ? (
-    <img
-      src={moviePoster}
-      alt="Movie Poster"
-      style={{ 
-        width: '100%', 
-        height: 'auto', 
-        maxHeight: '50vh', 
-        aspectRatio: '2 / 3', 
-        objectFit: 'cover',
-        margin: '20',
-        padding: '0',
-      }}
-    />
-  ) : (
-    <p>No Poster Available</p>
-  )}
-  
-  
-</Card>
+  <Card className="movie-poster-card">
+    {moviePoster ? (
+      <img
+        src={moviePoster}
+        alt="Movie Poster"
+        className="movie-poster-img"
+      />
+    ) : (
+      <p>No Poster Available</p>
+    )}
+  </Card>
+
   <div className="header-item">
     <label>Date:</label>
-    <DatePicker 
-      value={selectedDate} 
-      onChange={handleDateChange} 
-      allowClear={false} 
+    <DatePicker
+      value={selectedDate}
+      onChange={handleDateChange}
+      allowClear={false}
     />
   </div>
+
   <div className="header-item">
     <label>Time:</label>
     <TimePicker
@@ -579,6 +583,7 @@ const ShowtimeManagement: React.FC = () => {
       allowClear={false}
     />
   </div>
+
   <div className="header-item search-movie-container">
     <label>Movie:</label>
     <Select
@@ -601,6 +606,7 @@ const ShowtimeManagement: React.FC = () => {
       ))}
     </Select>
   </div>
+
   <div className="header-item search-theater-container">
     <label>Theater:</label>
     <Select
@@ -623,19 +629,22 @@ const ShowtimeManagement: React.FC = () => {
       ))}
     </Select>
   </div>
+
   <div className="header-item button-group">
     <button className="update-btn" onClick={handleUpdateShowTime}>
-    Update <EditOutlined/>
+      Update <EditOutlined />
     </button>
     <button className="delete-btn" onClick={handleDeleteShowTime}>
-      Delete <DeleteOutlined/>
+      Delete <DeleteOutlined />
     </button>
   </div>
 </Modal>
-</Card>
+
+        </Card>
+      </div>
     </div>
-    
   );
+  
 };
 
 export default ShowtimeManagement;
