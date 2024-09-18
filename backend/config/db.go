@@ -81,7 +81,11 @@ func SetupDatabase() {
 		Password:   hashedPassword,
 		GenderID:   GenderMale.ID,
 		TotalPoint: 10,
+<<<<<<< HEAD
 		Role:       "admin",
+=======
+		Role:       "user",
+>>>>>>> origin/test
 	}
 	db.FirstOrCreate(Member1, &entity.Member{
 		Email: "sa@gmail.com",
@@ -97,7 +101,7 @@ func SetupDatabase() {
 		Password:   hashedPassword2,
 		GenderID:   GenderMale.ID,
 		TotalPoint: 1000,
-		Role:       "customer",
+		Role:       "admin",
 	}
 	db.FirstOrCreate(Member2, &entity.Member{
 		Email: "sa2@gmail.com",
@@ -112,7 +116,7 @@ func SetupDatabase() {
 		Password:   hashedPassword3, // บันทึกรหัสผ่านที่แฮชแล้ว
 		GenderID:   GenderMale.ID,
 		TotalPoint: 8,
-		Role:       "customer",
+		Role:       "user",
 	}
 	db.FirstOrCreate(Member3, &entity.Member{
 		Email: "sa3@gmail.com",
