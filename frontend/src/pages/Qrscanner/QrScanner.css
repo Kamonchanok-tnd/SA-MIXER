@@ -1,6 +1,6 @@
 /* QrScanner.css */
 
-.container {
+.ticketcheckcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +14,9 @@
     text-align: center;
 }
 
-.header {
+/* .ticketcheckheader {
     margin-bottom: 2px;
-}
+} */
 
 .qrReader {
     width: auto;
@@ -30,23 +30,23 @@
     margin-top: 10px;
 }
 
-.dataContainer {
+/* .dataContainer {
     text-align: left;
-}
+} */
 
-.pre {
+/* .pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-}
+} */
 
-h1 {
+.ticketcheck h1 {
     position: sticky;
     top: 50px;
     text-align: center;
     z-index: 10; /* ถ้าต้องการให้ h1 อยู่เหนือองค์ประกอบอื่น */
     
 }   
-.input-button-container {
+.ticketcheckinput-button-container {
     display: flex;
     align-items: center;
   }

@@ -51,7 +51,7 @@ const columns = [
     }, []);
   
     return (
-      <div className="table-container">
+      <div className="ticketchecktable-container">
         <Sidebar /> 
         <Header />
         <Table

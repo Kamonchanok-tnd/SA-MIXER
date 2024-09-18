@@ -46,12 +46,14 @@ const QrScanner: React.FC = () => {
 
   return ( 
     
-    <div className="container">
+    <div className="ticketcheckcontainer">
       <Sidebar /> 
       <Header />
       <div className="scannerContainer">
         <br></br>
+      <div className="ticketcheck">
         <h1>QR Code Scanner</h1>
+      </div>
         <QrReader
           onResult={(result: any, error: any) => {
             
@@ -75,7 +77,7 @@ const QrScanner: React.FC = () => {
 
         {/* Ant Design Form */}
         <Form form={form} layout="vertical">
-          <div className="input-button-container">
+          <div className="ticketcheckinput-button-container">
             <Form.Item
               label="Ticket ID"
               name="ticketID"
