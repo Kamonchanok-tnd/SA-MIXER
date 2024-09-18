@@ -144,7 +144,7 @@ const getRewardImage = (reward: RewardInterface) => {
       }
   
       // ตรวจสอบว่าผู้ใช้มีคะแนนเพียงพอหรือไม่
-      if (userPoints < selectedReward.Points!) {
+      if (userPoints < selectedReward.reward .points!) {
         messageApi.open({
           type: "error",
           content: 'You do not have enough points to redeem this reward!',
@@ -153,7 +153,7 @@ const getRewardImage = (reward: RewardInterface) => {
       }
   
       // ลดคะแนนของผู้ใช้หลังจากแลกของรางวัล
-      const updatedPoints = userPoints - selectedReward.Points!;
+      const updatedPoints = userPoints - selectedReward.reward .points!;
       setUserPoints(updatedPoints);
       setRewards(prevRewards =>
         prevRewards.map(reward =>
@@ -510,7 +510,7 @@ const getRewardImage = (reward: RewardInterface) => {
 
 
   return (
-    
+    <div className='reward'>
     <div className="reward">
       <Navbar />
       <div className="reward-page-container">
@@ -670,6 +670,7 @@ const getRewardImage = (reward: RewardInterface) => {
           />
         )}
       </div>
+    </div>
     </div>
   );
 }  

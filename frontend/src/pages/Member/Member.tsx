@@ -265,7 +265,7 @@ function Member() {
   }, []);
 
   return (
-    <div>
+    <div className="member">
       <Card style={{ margin: "20px" }}>
         {contextHolder}
 

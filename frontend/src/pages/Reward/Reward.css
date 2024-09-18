@@ -3,8 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 /* สไตล์สำหรับ Center Image */
+.reward{
+    background-color: #000000;
+}
 
-.center-image {
+.reward .center-image {
     position: absolute;
     top: 550px; 
     left: 50%;
@@ -15,13 +18,13 @@
 }
 
 /* Main content area */
-.my-points-container {
+.reward .my-points-container {
     position: relative; /* ถ้าเป็น absolute หรือ fixed ให้ใช้ relative */
     top: 55px; /* เพิ่มระยะห่างจากด้านบน */
     text-align: left;
 }
 
-.my-points-container h1 {
+.reward .my-points-container h1 {
     margin-left: auto; /* เลื่อนข้อความไปทางขวาสุด */
     margin-left: 110px; /* ปรับระยะห่างจากขอบขวา */
     display: inline-block; /* ทำให้ margin-left ทำงาน */
@@ -29,7 +32,7 @@
 }
 
 
-.points-content {
+.reward .reward .points-content {
     display: flex;
     justify-content: space-between;
     background-color: #F4C542;
@@ -46,7 +49,7 @@
 }
 
 /* Profile section */
-.profile-section {
+.reward .profile-section {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -54,7 +57,7 @@
     font-weight: bold;
 }
 
-.profile-image {
+.reward .profile-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -62,7 +65,7 @@
 } 
 
 
-.my-reward-button {
+.reward .my-reward-button {
     background-color: #D9534F; /* สีพื้นหลังของปุ่ม */
     color: white; /* สีของข้อความในปุ่ม */
     padding: 10px 20px; /* ระยะห่างภายในปุ่ม */
@@ -78,27 +81,27 @@
   
 
 /* Divider ตัวแบ่ง */
-.divider {
+.reward .divider {
     width: 5px;
     background-color: #000;
     height: 250px;
 }
 
 /* Points section */
-.points-section {
+.reward .reward .points-section {
     flex: 1;
     text-align: center;
 }
 
 /* รูปเหรียญ */
-.points-icon {
+.reward .reward .points-icon {
     width: 70px;
     height: 60px;
     margin-bottom: 10px; /* เพิ่มระยะห่างจากองค์ประกอบข้างล่าง */
 }
 
 
-.balance h2 {
+.reward .balance h2 {
     font-size: 20px;
     font-weight: bold;
     margin: 0;
@@ -106,11 +109,11 @@
 }
 
 
-.points-section p {
+.reward .reward .points-section p {
     margin: 2px 0;
 }
 
-.description {
+.reward .description {
     font-size: 14px;
     color: #333;
     margin-top: 5px; /* เพิ่ม margin-top เพื่อเพิ่มระยะห่างจากคะแนน */
@@ -118,7 +121,7 @@
 
 
 /* History button */
-.history-button {
+.reward .history-button {
     background-color: #D9534F;
     color: #FFF;
     padding: 10px 20px;
@@ -129,13 +132,13 @@
     cursor: pointer;
 }
 
-.history-button:hover {
+.reward .history-button:hover {
     background-color: #c9423f; 
 }
 
 
 
-body {
+.reward body {
     margin: 0;
     padding: 0;
     background-color: rgb(0, 0, 0) !important;
@@ -147,7 +150,7 @@ body {
     color: white;
 }
 
-.container {
+.reward .container {
     position: relative;
     width: 100%; /* กำหนดให้ความกว้างเต็มหน้าจอ */
     min-height: 100vh; /* ปรับให้ความสูงอย่างน้อยเท่ากับความสูงของ viewport */
@@ -156,54 +159,54 @@ body {
 /* สไตล์สำหรับดาว */
 
 /* กระจายดาวทั่วหน้าจอด้วยระยะห่างที่มากขึ้น */
-.star {
+.reward .star {
     position: absolute;
     width: 100px; /* ขนาดของดาว */
 }
 
 /* กระจายดาวทั่วหน้าจอด้วยระยะห่างที่มากขึ้น */
-.star-1 {
+.reward .star-1 {
     top: 500px;
     right: 50px;
     width: 150px;
 }
 
-.star-2 {
+.reward .star-2 {
     top: 780px;
     right: 100px;
     width: 250px;
     
 }
 
-.star-3 {
+.reward .star-3 {
     top: 600px;
     left: 200px;
 }
 
-.star-4 {
+.reward .star-4 {
     top: 800px;
     left: 100px;
     width: 150px;
 }
 
-.star-5 {
+.reward .star-5 {
     top: 1200px;
     left: 390px;
     width: 50px;
 }
 
-.star-6 {
+.reward .star-6 {
     top: 1200px;
     right: 200px;
 }
 
-.star-7 {
+.reward .star-7 {
     top: 1450px;
     right: 100px;
     width: 250px;
 }
 
-.star-8 {
+.reward .star-8 {
     top: 1500px;
     left: 300px;
 }
@@ -213,77 +216,77 @@ body {
     right: 450px;
 }
 
-.star-10 {
+.reward .star-10 {
     top: 1900px;
     right: 300px;
     width: 150px;
 }
 
-.star-11 {
+.reward .star-11 {
     top: 2090px;
     right: 100px;
     width: 250px;
 }
 
-.star-12 {
+.reward .star-12 {
     top: 2300px;
     left: 250px;
     width: 150px;
 }
 
-.star-13 {
+.reward .star-13 {
     top: 2600px;
     right: 150px;
 }
 
-.star-14 {
+.reward .star-14 {
     top: 2900px;
     left: 400px;
 }
 
-.star-15 {
+.reward .star-15 {
     top: 3200px;
     right: 250px;
     width: 200px;
 }
 
-.star-16 {
+.reward .star-16 {
     top: 3500px;
     left: 150px;
     width: 150px;
 }
 
-.star-17 {
+.reward .star-17 {
     top: 3800px;
     right: 200px;
 }
 
-.star-18 {
+.reward .star-18 {
     top: 4700px;
     left: 400px;
 }
 
-.star-19 {
+.reward .star-19 {
     top: 4400px;
     right: 100px;
     width: 50px;
 }
 
-.star-20 {
+.reward .star-20 {
     top: 2000px;
     left: 20px;
 }
 
-.star-21 {
+.reward .star-21 {
     top: 5000px;
     right: 250px;
 }
 
-.star-22 {
+.reward .star-22 {
     top: 5300px;
     left: 200px;
 }
-.star-23 {
+.reward .star-23 {
     top: 5600px;
     left: 300px;
 }
@@ -291,134 +294,134 @@ body {
     top: 5900px;
     left: 100px;
 }
-.star-24 {
+.reward .star-24 {
     top: 5890px;
     left: 400px;
     width: 170px;
 }
-.star-25 {
+.reward .star-25 {
     top: 5820px;
     left: 1100px;
     width: 170px;
     
 }
-.star-26 {
+.reward .star-26 {
     top: 5800px;
     left: 90px;
     width: 170px;
 }
-.star-27 {
+.reward .star-27 {
     top: 5580px;
     left: 1100px;
     width: 60px;
 }
-.star-28 {
+.reward .star-28 {
     top: 5600px;
     left: 1320px;
     width: 200px;
 }
-.star-29 {
+.reward .star-29 {
     top: 4950px;
     left: 70px;
     width: 200px;
 }
-.star-30 {
+.reward .star-30 {
     top: 5200px;
     left: 1100px;
     width: 200px;
 }
-.star-31 {
+.reward .star-31 {
     top: 4400px;
     left: 90px;
     width: 200px;
 }
-.star-32 {
+.reward .star-32 {
     top: 4200px;
     left: 1000px;
     width: 100px;
 }
-.star-33 {
+.reward .star-33 {
     top: 3750px;
     left: 350px;
     width: 210px;
 }
-.star-34 {
+.reward .star-34 {
     top: 4500px;
     left: 1010px;
     width: 250px;
 }
-.star-35 {
+.reward .star-35 {
     top: 3400px;
     left: 1320px;
     width: 40px;
 }
-.star-35 {
+.reward .star-35 {
     top: 3000px;
     left: 1300px;
     width: 50px;
 }
-.star-36 {
+.reward .star-36 {
     top: 4000px;
     left: 1300px;
     width: 250px;
 }
-.star-37 {
+.reward .star-37 {
     top: 4000px;
     left: 100px;
     width: 170px;
 }
-.star-38 {
+.reward .star-38 {
     top: 4250px;
     left: 400px;
     width: 90px;
 }
 /*สีส้ม*/
-.star-39 { 
+.reward .star-39 { 
     top: 3500px;
     left: 1257px;
     width: 150px;
 } 
-.star-40 { 
+.reward .star-40 { 
     top: 3300px;
     left: 390px;
     width: 50px;
 } 
-.star-41 { 
+.reward .star-41 { 
     top: 3100px;
     left: 130px;
     width: 150px;
 } 
-.star-42 {
+.reward .star-42 {
     top: 2800px;
     left: 1000px;
     width: 150px;
 }
-.star-43 {
+.reward .star-43 {
     top: 2690px;
     left: 20px;
     width: 150px;
 }
-.star-44 {
+.reward .star-44 {
     top: 2550px;
     left: 420px;
     width: 90px;
 }
-.star-45 {
+.reward .star-45 {
     top: 2410px;
     left: 970px;
     width: 100px;
 }
-.star-46 {
+.reward .star-46 {
     top: 1750px;
     left: 220px;
     width: 200px;
 }
-.star-47 {
+.reward .star-47 {
     top: 1110px;
     left: 20px;
     width: 200px;
 }
-.star-48 {
+.reward .star-48 {
     top: 840px;
     left: 420px;
     width: 90px;
@@ -429,7 +432,7 @@ body {
 
 /* สไตล์สำหรับรูปรางวัล */
 /* สไตล์สำหรับรูปรางวัล */
-.popcorn-box {
+.reward .popcorn-box {
     position: absolute;
     width: 150px;
     z-index: 1;
@@ -437,99 +440,99 @@ body {
     transform: translateX(-50%); /* เลื่อนกึ่งกลางของรูปภาพไปตรงกลางหน้าจอ */
 }
 
-.popcorn-box:hover {
+.reward .popcorn-box:hover {
     transform: translateX(-50%) scale(1.1); /* ขยายขนาดเมื่อ hover */
 }
 
-.popcorn-box-1 {
+.reward .popcorn-box-1 {
     top: 670px;
     width: 280px;
     left: 51%;
 }
 
-.popcorn-box-2 {
+.reward .popcorn-box-2 {
     top: 980px;
     width: 230px;
 }
 
-.popcorn-box-3 {
+.reward .popcorn-box-3 {
     top: 1270px;
     width: 230px; /* ปรับขนาดตามที่ต้องการ */
     left: 52%;
 }
 
-.popcorn-box-4 {
+.reward .popcorn-box-4 {
     top: 1510px;
     width: 250px;
 }
 
-.popcorn-box-5 {
+.reward .popcorn-box-5 {
     top: 1780px;
     width: 170px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-6 {
+.reward .popcorn-box-6 {
     top: 2040px;
     width: 250px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-7 {
+.reward .popcorn-box-7 {
     top: 2290px;
     width: 250px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-8 {
+.reward .popcorn-box-8 {
     top: 2550px;
     width: 170px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-9 {
+.reward .popcorn-box-9 {
     top: 2840px;
     width: 170px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-10 {
+.reward .popcorn-box-10 {
     top: 3020px;
     width: 200px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-11 {
+.reward .popcorn-box-11 {
     top: 3350px;
     width: 300px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-12 {
+.reward .popcorn-box-12 {
     top: 3665px;
     width: 250px; /* ปรับขนาดตามที่ต้องการ */
     left: 50%;
 }
 
-.popcorn-box-13 {
+.reward .popcorn-box-13 {
     top: 3980px;
     width: 200px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-14 {
+.reward .popcorn-box-14 {
     top: 4350px;
     width: 360px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-15 {
+.reward .popcorn-box-15 {
     top: 4650px;
     width: 300px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-16 {
+.reward .popcorn-box-16 {
     top: 5100px;
     width: 480px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-17 {
+.reward .popcorn-box-17 {
     top: 5347px;
     width: 250px; /* ปรับขนาดตามที่ต้องการ */
 }
 
-.popcorn-box-18 {
+.reward .popcorn-box-18 {
     top: 5700px;
     left: 53%;
     width: 150px; /* ปรับขนาดตามที่ต้องการ */
@@ -538,7 +541,7 @@ body {
 
 
 /* สไตล์สำหรับกล่องข้อความ */
-.popcorn-label {
+.reward .popcorn-label {
     font-family: 'Fjalla One', sans-serif; /* กำหนดฟอนต์ Fjalla One */
     font-weight: bold; /* ตั้งค่าให้เป็นตัวหนา */
     position: absolute;
@@ -555,78 +558,78 @@ body {
 }
 
 
-.popcorn-label-1 {
+.reward .popcorn-label-1 {
     top: 910px;
 }
 
-.popcorn-label-2 {
+.reward .popcorn-label-2 {
     top: 1200px;
 }
 
-.popcorn-label-3 {
+.reward .popcorn-label-3 {
     top: 1450px;
 }
 
-.popcorn-label-4 {
+.reward .popcorn-label-4 {
     top: 1720px;
 }
 
-.popcorn-label-5 {
+.reward .popcorn-label-5 {
     top: 1970px;
 }
 
-.popcorn-label-6 {
+.reward .popcorn-label-6 {
     top: 2230px;
 }
 
-.popcorn-label-7 {
+.reward .popcorn-label-7 {
     top: 2485px;
 }
 
-.popcorn-label-8 {
+.reward .popcorn-label-8 {
     top: 2750px;
 }
 
-.popcorn-label-9 {
+.reward .popcorn-label-9 {
     top: 2960px;
 }
 
-.popcorn-label-10 {
+.reward .popcorn-label-10 {
     top: 3250px;
 }
 
-.popcorn-label-11 {
+.reward .popcorn-label-11 {
     top: 3530px;
 }
 
-.popcorn-label-12 {
+.reward .popcorn-label-12 {
     top: 3900px;
 }
 
-.popcorn-label-13 {
+.reward .popcorn-label-13 {
     top: 4200px;
 }
 
-.popcorn-label-14 {
+.reward .popcorn-label-14 {
     top: 4540px;
 }
 
-.popcorn-label-15 {
+.reward .popcorn-label-15 {
     top: 4980px;
     left: 51.9%;
 }
 
-.popcorn-label-16 {
+.reward .popcorn-label-16 {
     top: 5270px;
     left: 51.9%;
 }
 
-.popcorn-label-17 {
+.reward .popcorn-label-17 {
     top: 5580px;
     left: 51.9%;
 }
 
-.popcorn-label-18 {
+.reward .popcorn-label-18 {
     top: 5937px;
     left: 51.9%;
     
@@ -634,126 +637,126 @@ body {
 
 
 
-.points-2 {
+.reward .points-2 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 670px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:460px;
 }
-.points-4 {
+.reward .points-4 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 980px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:460px;
 }
-.points-6 {
+.reward .points-6 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 1250px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:490px;
 }
-.points-9 {
+.reward .points-9 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 1500px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:460px;
 }
-.points-12 {
+.reward .points-12 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 1750px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:500px;
 }
-.points-15 {
+.reward .points-15 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 2010px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:430px;
 }
-.points-18 {
+.reward .points-18 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 2230px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:450px;
 }
-.points-21 {
+.reward .points-21 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 2520px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:470px;
 }
-.points-26 {
+.reward .points-26 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 2770px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:480px;
 }
-.points-32 {
+.reward .points-32 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 2970px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:430px;
 }
-.points-38 {
+.reward .points-38 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 3300px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:450px;
 }
-.points-45 {
+.reward .points-45 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 3550px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:380px;
 }
-.points-50 {
+.reward .points-50 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 3950px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:450px;
 }
-.points-60 {
+.reward .points-60 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 4290px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:370px;
 }
-.points-70 {
+.reward .points-70 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 4600px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:450px;
 }
-.points-80 {
+.reward .points-80 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 4980px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     right:370px;
 }
-.points-90 {
+.reward .points-90 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 5350px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
     height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
     left:430px;
 }
-.points-100 {
+.reward .points-100 {
     position: absolute; /* ต้องใช้ position เพื่อกำหนด top และ left */
     top: 5670px; /* ระบุหน่วยเป็น px */
     width: 150px; /* ระบุหน่วยเป็น px */
@@ -765,7 +768,7 @@ body {
 
 
 /* Popup.css  ของ ข้อความ เหรียญ ไม่เพียงพอ*/
-.popup-coin {
+.reward .popup-coin {
     position: fixed;
     top: 0;
     left: 0;
@@ -777,7 +780,7 @@ body {
     align-items: center;
   }
   
-  .popup-content-coin {
+  .reward .popup-content-coin {
     background-color: white; /* สีพื้นหลังขาว */
     padding: 20px;
     border-radius: 10px;
@@ -785,11 +788,11 @@ body {
     text-align: center;
   }
   
-  .popup-content-coin h2 {
+  .reward .popup-content-coin h2 {
     margin-bottom: 20px;
   }
   
-  .popup-content-coin button {
+  .reward .popup-content-coin button {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -798,7 +801,7 @@ body {
     cursor: pointer;
   }
   
-  .popup-content-coin button:hover {
+  .reward .popup-content-coin button:hover {
     background-color: #0056b3;
   }
   

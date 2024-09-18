@@ -1,8 +1,8 @@
-body.popup-open {
+body.reward .popup-open {
     overflow: auto;
 }
 
-.popup-overlay {
+.reward .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;

@@ -1,19 +1,21 @@
 
-  
-  .member-actions {
+  .member{
+    background-color: #ffffff;
+  }
+  .member .member-actions {
     text-align: end;
     align-self: center;
   }
   
-  .member-table-container {
+  .member .member-table-container {
     margin: 10px 3px;
     align-items: center;
   }
   
-  .delete-button {
+  .member .delete-button {
     margin-left: 10px;
   }
-  th {
+  .member th {
     text-align: center; /* จัดกลางในแนวนอน */
     vertical-align: middle; /* จัดกลางในแนวตั้ง */
     padding: 10px; /* เพิ่มพื้นที่ภายใน */
@@ -21,7 +23,7 @@
     font-weight: bold; /* ทำตัวหนา */
   }
 
-  .member-table-container .ant-pagination {
+  .member .member-table-container .ant-pagination {
     justify-content: center;
   }
   
